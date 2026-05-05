@@ -1,0 +1,33 @@
+import java.io.FileReader; 
+import java.io.FileWriter; 
+import java.io.IOException; 
+ 
+public class FileExpt{ 
+ 
+ public static void main(String[] args) { 
+  // TODO Auto-generated method stub 
+   
+  // The file reading process may sometimes give 
+        // IOException 
+   
+        // Try block to check for exceptions 
+        try { 
+            // Creating a FileReader object and 
+           // from the local directory of computer 
+           FileReader fr = new FileReader("Input.txt"); 
+            
+           // Creating a FileWriter object 
+           FileWriter fw = new FileWriter("output.txt"); 
+            
+           String str = ""; 
+           int i; 
+           // read() method will read the file character by character  
+           // print it until it end the end of the file 
+     
+              // Condition check 
+              // Reading the file using read() method which 
+              // returns -1 at EOF while reading 
+ 
+  while ((i = fr.read()) != -1) { 
+     
+                  // Storing every character in the string 

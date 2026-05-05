@@ -1,0 +1,69 @@
+import java.util.Scanner; 
+ 
+public class SortArray { 
+    public static void main(String[] args) { 
+        Scanner scanner = new Scanner(System.in); 
+         
+        // Sorting integers 
+        System.out.println("Enter the number of integers:"); 
+        int n = scanner.nextInt(); 
+        int[] numbers = new int[n]; 
+         
+        System.out.println("Enter " + n + " integers:"); 
+        for (int i = 0; i < n; i++) { 
+            numbers[i] = scanner.nextInt(); 
+        } 
+ 
+        // Sorting names 
+        System.out.println("Enter the number of names:"); 
+        int m = scanner.nextInt(); 
+        String[] names = new String[m]; 
+        scanner.nextLine();  // Consume the newline left after nextInt() 
+ 
+        System.out.println("Enter " + m + " names:"); 
+        for (int i = 0; i < m; i++) { 
+            names[i] = scanner.nextLine(); 
+        } 
+ 
+        // Sort integers using a simple bubble sort 
+        for (int i = 0; i < n - 1; i++) { 
+            for (int j = 0; j < n - i - 1; j++) { 
+                if (numbers[j] > numbers[j + 1]) { 
+                  
+                  
+                    int temp = numbers[j]; 
+                    numbers[j] = numbers[j + 1]; 
+                    numbers[j + 1] = temp; 
+                } 
+            } 
+        } 
+ 
+        // Sort names using a simple bubble sort 
+        for (int i = 0; i < n - 1; i++) { 
+            // Inner loop to compare adjacent names 
+            for (int j = 0; j < n - i - 1; j++) { 
+                // Use compareTo to compare two strings lexicographically 
+                if (names[j].compareTo(names[j + 1]) > 0) { 
+                    // Swap names[j] and names[j+1] if they are in the wrong order 
+                    String temp = names[j]; 
+                    names[j] = names[j + 1]; 
+                    names[j + 1] = temp; 
+                } 
+            } 
+        } 
+ 
+        // Display sorted integers 
+        System.out.println("\nSorted Integers:"); 
+        for (int i = 0; i < n; i++) { 
+            System.out.print(numbers[i] + " "); 
+        } 
+ 
+        // Display sorted names 
+        System.out.println("\n\nSorted Names:"); 
+        for (int i = 0; i < m; i++) { 
+            System.out.println(names[i]); 
+        } 
+ 
+        scanner.close(); 
+    } 
+}

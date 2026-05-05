@@ -1,0 +1,41 @@
+interface FirstIntf {
+    void interfDemo1();
+    void sum(int a, int b);
+
+    public static void main(String[] args) {
+        InterfaceDemo obj = new InterfaceDemo();
+
+        obj.interfDemo1();
+        obj.sum(10, 20);
+
+        obj.interfDemo2();
+        obj.sub(50, 20);
+    }
+}
+
+interface SecondIntf {
+    void interfDemo2();
+    void sub(int a, int b);
+}
+
+class InterfaceDemo implements FirstIntf, SecondIntf {
+    int c;
+
+    public void interfDemo1() {
+        System.out.println("This is interface 1");
+    }
+
+    public void sum(int a, int b) {
+        c = a + b;
+        System.out.println("Addition of two numbers is " + c);
+    }
+
+    public void interfDemo2() {
+        System.out.println("This is interface 2");
+    }
+
+    public void sub(int a, int b) {
+        c = a - b;
+        System.out.println("Subtraction of two numbers is " + c);
+    }
+}

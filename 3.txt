@@ -1,0 +1,39 @@
+class Rectangle {
+    private double length;
+    private double width;
+    private String colour;
+
+    Rectangle(double length, double width, String colour) {
+        this.length = length;
+        this.width = width;
+        this.colour = colour;
+    }
+
+    double getLength() {
+        return length;
+    }
+
+    double getWidth() {
+        return width;
+    }
+
+    String getColour() {
+        return colour;
+    }
+
+    double getArea() {
+        return length * width;
+    }
+
+    public static void main(String[] args) {
+        Rectangle rect1 = new Rectangle(10.5, 4.2, "Blue");
+        Rectangle rect2 = new Rectangle(10.5, 5.2, "Blue");
+
+        if (rect1.getArea() == rect2.getArea()
+                && rect1.getColour().equalsIgnoreCase(rect2.getColour())) {
+            System.out.println("Matching Rectangles");
+        } else {
+            System.out.println("Non-matching Rectangles");
+        }
+    }
+}

@@ -1,0 +1,45 @@
+// Program to demonstrate Method Overloading and Constructor Overloading
+class OverloadDemo {
+
+    // Constructor Overloading
+    OverloadDemo() {
+        System.out.println("Default Constructor called.");
+    }
+
+    OverloadDemo(int a) {
+        System.out.println("Constructor with one parameter called. Value: " + a);
+    }
+
+    OverloadDemo(int a, int b) {
+        System.out.println("Constructor with two parameters called. Sum: " + (a + b));
+    }
+
+    // Method Overloading
+    void display() {
+        System.out.println("Display method with no parameters.");
+    }
+
+    void display(int a) {
+        System.out.println("Display method with one parameter. Value: " + a);
+    }
+
+    void display(int a, int b) {
+        System.out.println("Display method with two parameters. Sum: " + (a + b));
+    }
+
+    public static void main(String[] args) {
+        // Constructor Overloading in action
+        System.out.println("Constructor Overloading:");
+
+        OverloadDemo obj1 = new OverloadDemo();
+        OverloadDemo obj2 = new OverloadDemo(10);
+        OverloadDemo obj3 = new OverloadDemo(10, 20);
+
+        // Method Overloading in action
+        System.out.println("\nMethod Overloading:");
+
+        obj1.display();
+        obj1.display(5);
+        obj1.display(7, 8);
+    }
+}
